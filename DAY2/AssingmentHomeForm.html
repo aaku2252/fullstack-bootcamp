@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Form Assignment</title>
+    </head>
+    <body bgcolor="hotpink">
+        <form action="/" method="post">
+            <table cellpadding="10px" align="center">
+                <tr>
+                    <th><h1>Log In</h1></th>
+                </tr>
+                <tr>
+                    <td><label for="UserId">User Id :</label></td>
+                    <td>
+                        <input
+                            type="text"
+                            id="UserId"
+                            maxlength="10"
+                            required />
+                    </td>
+                </tr>
+                <tr></tr>
+                <tr>
+                    <td><label for="password">Password :</label></td>
+                    <td>
+                        <input
+                            type="password"
+                            id="password"
+                            minlength="8"
+                            maxlength="12"
+                            required />
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        <button type="submit">Submit</button>
+                    </td>
+                    <td align="center">
+                        <button>Forget Password</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

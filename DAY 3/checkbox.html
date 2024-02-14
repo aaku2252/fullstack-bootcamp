@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Radio Tags</title>
+    </head>
+    <body>
+        <table border="2px" align="center">
+            <tr>
+                <td><h2>Student Registration form</h2></td>
+            </tr>
+        </table>
+        <br />
+        <form action="/" method="post">
+            <table align="center" cellpadding="10px" bgcolor="aqua">
+                <tr>
+                    <td><label for="fname">First Name:</label></td>
+                    <td>
+                        <input type="text" name="fname" id="fname" required />
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="lname">Last Name:</label></td>
+                    <td>
+                        <input type="text" name="lname" id="lname" required />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="fatherName">Father's Name:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="fatherName" id="fatherName" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="motherName">Mother's Name:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="motherName" id="motherName" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="phoneNumber">Phone Number:</label>
+                    </td>
+                    <td>
+                        <input
+                            type="number"
+                            name="phoneNumber"
+                            id="phoneNumber" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="email">Email:</label>
+                    </td>
+                    <td><input type="email" name="email" id="email" /></td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Gender:</p>
+                    </td>
+                    <td>
+                        <label for="male">Male</label>
+                        <input
+                            type="radio"
+                            name="gender"
+                            id="male"
+                            value="male" />
+                        <label for="female">Female</label>
+                        <input
+                            type="radio"
+                            name="gender"
+                            id="female"
+                            value="female" />
+                        <label for="transgender">Transgender</label>
+                        <input
+                            type="radio"
+                            name="gender"
+                            id="transgender"
+                            value="transgender" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Date of Birth:</td>
+                    <td><input type="date" name="date" id="date" /></td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td>
+                        <textarea
+                            name="Address"
+                            id="Address"
+                            cols="20"
+                            rows="3"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Blood Group:</td>
+                    <td>
+                        <select name="bloodGroup" id="bloodGroup">
+                            <option value="">--Select--</option>
+                            <option value="">A</option>
+                            <option value="">B</option>
+                            <option value="">AB</option>
+                            <option value="">O</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Department:</td>
+                    <td>
+                        <label for="male">ML</label>
+                        <input
+                            type="radio"
+                            name="department"
+                            id="male"
+                            value="male" />
+                        <label for="male">Robotics</label>
+                        <input
+                            type="radio"
+                            name="department"
+                            id="male"
+                            value="male" />
+                        <label for="female">Data Science</label>
+                        <input
+                            type="radio"
+                            name="department"
+                            id="female"
+                            value="female" />
+                        <label for="transgender">AI</label>
+                        <input
+                            type="radio"
+                            name="department"
+                            id="transgender"
+                            value="transgender" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Course:</td>
+                    <td>
+                        <label for="male">CSE</label>
+                        <input
+                            type="radio"
+                            name="course"
+                            id="male"
+                            value="male" />
+                        <label for="female">EEE</label>
+                        <input
+                            type="radio"
+                            name="course"
+                            id="female"
+                            value="female" />
+                        <label for="transgender">BBA</label>
+                        <input
+                            type="radio"
+                            name="course"
+                            id="transgender"
+                            value="transgender" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Photo</td>
+                    <td><input type="file" accept=".jpg" /></td>
+                </tr>
+                <tr>
+                    <td><button type="submit">Submit</button></td>
+                    <td><button type="reset">Reset</button></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

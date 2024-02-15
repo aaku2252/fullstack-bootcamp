@@ -13,4 +13,19 @@ body {
     background-clip: border-box;
     background-position: center;
     background-size: cover;
+    animation-name: newAnimation;
+    animation-duration: 3s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+@keyframes newAnimation {
+    from {
+        width: 450px;
+        height: 450px;
+    }
+
+    to {
+        width: 900px;
+        height: 900px;
+    }
 }

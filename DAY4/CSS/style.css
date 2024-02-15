@@ -1,31 +1,36 @@
-/* * {
-    box-sizing: border-box;
-} */
 body {
-    background-color: #f1faee;
+    background-color: aquamarine;
+    text-align: center;
 }
-.div1 {
-    border: 2px solid black;
-    height: 450px;
-    width: 450px;
-    background-repeat: no-repeat;
-    background-image: url("../../Media/iphone-card-40-iphone15prohero-202309_FMT_WHH.jpg");
-    background-clip: border-box;
+
+div {
+    text-align: center;
+}
+.image1 {
+    height: 500px;
+    width: 500px;
+    margin: auto;
+    background-image: url("../../Media/image.jpg");
     background-position: center;
     background-size: cover;
-    animation-name: newAnimation;
-    animation-duration: 3s;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
+    border-radius: 10%;
 }
-@keyframes newAnimation {
-    from {
-        width: 450px;
-        height: 450px;
-    }
+.image1:hover {
+    color: blueviolet;
+}
 
-    to {
-        width: 900px;
-        height: 900px;
-    }
+.rotate {
+    height: 500px;
+    width: 500px;
+    object-fit: cover;
+    object-position: right;
+    border-radius: 50%;
+    transition: all 0.5s;
+}
+.rotate:hover {
+    transform: rotate(90deg);
+}
+.flexbox {
+    display: flex;
+    justify-content: space-around;
 }

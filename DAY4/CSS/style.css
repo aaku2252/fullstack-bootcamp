@@ -1,0 +1,16 @@
+/* * {
+    box-sizing: border-box;
+} */
+body {
+    background-color: #f1faee;
+}
+.div1 {
+    border: 2px solid black;
+    height: 450px;
+    width: 450px;
+    background-repeat: no-repeat;
+    background-image: url("../../Media/iphone-card-40-iphone15prohero-202309_FMT_WHH.jpg");
+    background-clip: border-box;
+    background-position: center;
+    background-size: cover;
+}

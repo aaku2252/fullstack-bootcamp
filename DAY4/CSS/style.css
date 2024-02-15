@@ -34,3 +34,6 @@ div {
     display: flex;
     justify-content: space-around;
 }
+.column-count p {
+    column-count: 5;
+}

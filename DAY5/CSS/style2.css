@@ -7,10 +7,14 @@ body {
         66%,
         #e75fc3
     );
-    font-weight: 400;
-    font-family: "Courier New", Courier, monospace;
+    font-family: monospace;
 }
 img {
+    width: 300px;
+    height: 200px;
     object-fit: cover;
     object-position: center;
+}
+img:hover {
+    transform: scale(1.1);
 }

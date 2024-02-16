@@ -1,6 +1,9 @@
 body {
-    background-color: coral;
-
+    /* background-color: coral; */
+    /* background-color: #c2a0bf; */
+    /* background-image: url("linear-gradient(to right,coral, #c2a0bf)"); */
+    background-image: linear-gradient(to right, coral, 20%, #c5a5c3);
+    font-weight: 400;
     font-family: "Courier New", Courier, monospace;
 }
 
@@ -13,4 +16,19 @@ img {
     height: 200px;
     object-fit: cover;
     object-position: center;
+}
+@media screen and (max-width: 787px) {
+    img {
+        height: 100px;
+    }
+}
+
+h1 {
+    border: 2px solid black;
+    font-size: 1rem;
+    display: inline-block;
+    box-sizing: border-box;
+}
+* {
+    box-sizing: border-box;
 }

@@ -1,0 +1,16 @@
+body {
+    background-image: linear-gradient(
+        to right,
+        coral,
+        33%,
+        #c5a5c3,
+        66%,
+        #e75fc3
+    );
+    font-weight: 400;
+    font-family: "Courier New", Courier, monospace;
+}
+img {
+    object-fit: cover;
+    object-position: center;
+}

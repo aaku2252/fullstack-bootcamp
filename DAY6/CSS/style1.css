@@ -1,0 +1,10 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background-image: linear-gradient(to right, coral, lavender);
+    padding: 20px;
+}
+.card-box {
+    width: 300px;
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Assignment</title>
+        <link rel="stylesheet" href="./CSS/style2.css" />
+    </head>
+    <body>
+        <table align="center">
+            <tr>
+                <td>
+                    <h2 style="color: rgb(0, 84, 92)">Registration form</h2>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <form action="/" method="get" align="center">
+            <table align="center" cellspacing="5px" cellpadding="10px">
+                <tr>
+                    <td><label for="fname">Full Name:</label></td>
+                    <td>
+                        <input type="text" name="fname" id="fname" required />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label for="lname">Email Address:</label></td>
+                    <td>
+                        <input type="text" name="lname" id="lname" required />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Select tour Package:</td>
+                    <td>
+                        <select name="bloodGroup" id="bloodGroup">
+                            <option value="">--Select--</option>
+                            <option value="">Goa</option>
+                            <option value="">Manali</option>
+                            <option value="">simla</option>
+                            <option value="">Kashmir</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="phoneNumber">Number of Person:</label>
+                    </td>
+                    <td>
+                        <input
+                            type="number"
+                            name="phoneNumber"
+                            id="phoneNumber" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Gender:</p>
+                    </td>
+                    <td>
+                        <label for="male">Male</label>
+                        <input
+                            type="radio"
+                            name="gender"
+                            id="male"
+                            value="male" />
+                        <label for="female">Female</label>
+                        <input
+                            type="radio"
+                            name="gender"
+                            id="female"
+                            value="female" />
+                        <label for="transgender">Transgender</label>
+                        <input
+                            type="radio"
+                            name="gender"
+                            id="transgender"
+                            value="transgender" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Arrival date:</td>
+                    <td><input type="date" name="date" id="date" /></td>
+                </tr>
+
+                <tr>
+                    <td>Amenities Available:</td>
+                    <td>
+                        <label for="ml">Food</label>
+                        <input type="radio" name="department" id="ml" />
+                        <label for="robotics">Lodging</label>
+                        <input type="radio" name="department" id="robotics" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Terms and Condition:</td>
+                    <td>
+                        <label for="cse">Agree</label>
+                        <input
+                            type="radio"
+                            name="course"
+                            id="cse"
+                            value="male" />
+                        <label for="eee">Not Agree</label>
+                        <input type="radio" name="course" id="eee" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2"><button type="submit">Submit</button></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

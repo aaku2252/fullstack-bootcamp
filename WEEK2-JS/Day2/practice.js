@@ -1,30 +1,30 @@
-const readline = require("readline");
+// const readline = require("readline");
 
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-});
+// const rl = readline.createInterface({
+//     input: process.stdin,
+//     output: process.stdout,
+// });
 
-let output = 0;
+// let output = 0;
 
-function processData(data) {
-    data = parseInt(data, 10);
-    if (data >= 0) {
-        output += data;
-    } else {
-        console.log(output);
-        rl.close();
-    }
-}
-function getInput() {
-    rl.question("Please enter a number:", (input) => {
-        processData(input);
-        if (input >= 0) {
-            getInput();
-        }
-    });
-}
-getInput();
+// function processData(data) {
+//     data = parseInt(data, 10);
+//     if (data >= 0) {
+//         output += data;
+//     } else {
+//         console.log(output);
+//         rl.close();
+//     }
+// }
+// function getInput() {
+//     rl.question("Please enter a number:", (input) => {
+//         processData(input);
+//         if (input >= 0) {
+//             getInput();
+//         }
+//     });
+// }
+// getInput();
 
 // const readline = require("readline");
 
@@ -57,3 +57,10 @@ getInput();
 // }
 
 // getInput(); // Start reading input
+
+function add(...args) {
+    let b = args.map((x) => x ** 2);
+    console.log(b);
+}
+
+add(2, 3, 4, 5, 6, 7, 7, 8, 8, 9, 10, 11, 12, 12);

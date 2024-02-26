@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import "./App.css";
 
 import Card from "./components/Card";
+import Movies from "./components/Movies";
 
 function App() {
-    const [first, setfirst] = useState(56);
+    const [first, setfirst] = useState(0);
 
     return (
         <div>
@@ -19,6 +20,9 @@ function App() {
                 Decrease
             </button>
             <Card a={first} />
+            <Movies>
+                <h1>This is a heading.</h1>
+            </Movies>
         </div>
     );
 }

@@ -1,6 +1,7 @@
 set autocommit = 0;
 set sql_safe_updates= 0;
 use user;
+-- first assignment
 -- 1. create table
 create table employee(emp_id varchar(10) primary key, emp_name varchar(30) not null,emp_job varchar(30) not null,emp_salary int,join_date date,emp_age int check(emp_age>20));
 
@@ -105,5 +106,6 @@ select emp_name from employee where emp_id= all(select emp_id from employee wher
 select * from class;
 alter table class add column class_id varchar(10); 
 
+-- second assignemnt
 
 

@@ -38,7 +38,7 @@ delete from employee  where emp_id = 'E400006';
 select * from employee where emp_salary>=30000 and emp_salary<=80000;
 
 -- 11 desiplay all items wherer name of the employee starts with a
-select * from employee where left(emp_name,1)='A';
+select * from employee where emp_name like 'A%';
 
 
 
@@ -59,3 +59,51 @@ select * from employee where emp_salary between 50000 and 80000;
 select count(*) from employee where emp_des in ("data-analyst","AI-developer");
 
 select * from employee where emp_name like "A%";
+
+-- update the name of the employees
+update employee set emp_name="Rajesh" where emp_id = "E400001";
+
+-- find the data where name is gaurav and salary is 70000
+select * from employee where emp_name like "G%" && emp_des = "data-analyst";
+
+-- update name of employee
+update employee set emp_name = "Sandeep" where emp_name like "G%" && emp_salary>=80000;
+
+-- find the updated name
+select * from employee where emp_name like "A%"  and not emp_des = "data-analyst";
+
+-- order by function to get in ascending and descending order
+select * from employee order by emp_name asc;
+select sum(emp_salary),emp_salary,emp_des,emp_age from employee  group by emp_salary , emp_des,emp_age;
+
+
+-- Aggregate function- count,sum,avg,min function
+select count(*) from employee where emp_name like "a%";
+select sum(emp_salary) from employee where emp_des = "data-analyst";
+select avg(emp_salary) from employee where emp_des = "data-analyst";
+select max(emp_salary) from employee where emp_des = "data-analyst";
+select min(emp_salary) from employee where emp_des = "data-analyst";
+
+-- updated the name of gaurav in databse
+update employee set emp_name = "Manoj" where emp_id = "E400002";
+
+
+-- having clause 
+select count(emp_salary),emp_salary  from employee group by emp_salary having emp_salary=70000;
+
+-- find records from employee whose salary is greater than average salary
+select * from employee where emp_salary > (select avg(emp_salary) from employee);
+
+-- update the table
+update employee set emp_salary= 50000 where emp_id = "E400001";
+
+-- any/all in subqueries
+select emp_name from employee where emp_id= any(select emp_id from employee where emp_salary< (select avg(emp_salary) from employee ));
+
+select emp_name from employee where emp_id= all(select emp_id from employee where emp_salary=50000);
+
+select * from class;
+alter table class add column class_id varchar(10); 
+
+
+

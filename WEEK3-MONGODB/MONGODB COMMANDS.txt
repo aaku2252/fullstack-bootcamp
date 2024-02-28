@@ -49,3 +49,72 @@ db.student.insertMany([{_id:2,rollno:2,name:'akash'},{_id:3,rollno:3,name:'ajay'
 8.  find a specific data-->
 
 db.student.find({name:'Akash'})
+
+
+9. update the exisiting data from collectionsfilter from first {} use set  in second {} and inside that gives value of set to the new value we want to give.
+It will add a new document (R) document if find condition does not matches .By default upsert is false we can set it to true if we want it. upsert is a optional data.-->
+
+db.student.updateOne({_id:2},{$set:{name:'Manjeet'}},{upsert:true})
+
+
+10.  Update many users fields at a time-->
+ 
+db.student.updateMany({address:'narnaul'},{$set:{distt:'M.garh'}})
+
+
+11. Delete a whole document from the collection-->
+
+db.student.deleteOne({address:'kalba'})
+
+12. If you want to replace the whole document, we need to provide all the fields of the new document-->
+
+db.student.replaceOne({name:'Manjeet'},{
+_id: 2,
+  rollno: 102,
+  name: 'Vedant',
+  address: 'Jaipur',
+  service: 'Pvt Employee'
+})
+
+13. Projection, finding specific data , it only shows the data where we set that key name equals to 1 else if we want to set something to hide then set that key name to 0, by default it shows the id if u dont want id then you can set id to 0-> 
+
+db.student.find({},{_id:0,name:1})
+
+
+14. Cursor methods helps in further getting the knowledge of find() method, find on steroids
+
+db.student.find().pretty() --> simplify the result
+
+db.student.find().explain('executionStats')  --> explains the behind the scene progress in execution of find
+
+db.student.find().next()   --> first document out of the several similar items
+
+db.student.find().hasNext()  --> if next() si true or not / atleast a single item
+
+db.student.find().sort({name:1/-1})--> Sort the documents on name  if 1 then ascending/ if -1 then descending 
+
+db.student.find().limit(3) --> show only top 3 records
+
+db.student.find().skip(3) --> it skips first 3 records
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

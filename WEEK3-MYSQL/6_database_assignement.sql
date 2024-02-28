@@ -2,10 +2,10 @@ use class;
 
 -- 1. crate a table
 
-create table product(product_id varchar(10) primary key, product_name varchar(30) not null,product_category varchar(40) not null,product_price decimal(7,2) not null,quantity int check(quantity>0));
+-- create table product(product_id varchar(10) primary key, product_name varchar(30) not null,product_category varchar(40) not null,product_price decimal(7,2) not null,quantity int check(quantity>0));
 
 -- 2. insert five products in the table
-insert into product values ("p1","book","general",700.99,400),("p2","notebook","general",400.20,200),("p3","laptop","electronics",25000.00,20),("p4","chair","furniture",5000.00,20),("p5","board","general",2000.00,20);
+-- insert into product values ("p1","book","general",700.99,400),("p2","notebook","general",400.20,200),("p3","laptop","electronics",25000.00,20),("p4","chair","furniture",5000.00,20),("p5","board","general",2000.00,20);
 
 
 -- 3. find number of categories from product gallery

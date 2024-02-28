@@ -1,0 +1,51 @@
+1. Create a collection--> 
+
+db.createCollection("student")
+
+
+2. Insert single record (data) in that collection of database -->
+
+db.student.insertOne(
+{
+rollno:1,
+name:'Akash',
+phone:1234567891
+}
+)
+
+
+3. displaying all records-->
+
+db.student.find()
+
+
+4. insert single record with index-->
+
+
+db.student.insertOne(
+{
+_id : 1,
+rollno:2,
+name:'Ajay',
+phone:1234567892
+}
+)
+
+
+5. delete a single entry from collection -->
+
+db.collection('yourCollectionName').deleteOne({ /* Filter */ });
+
+
+6. show databases and collections -->
+
+show databases
+show collections
+
+7.  insert multiple records at a time -->
+
+db.student.insertMany([{_id:2,rollno:2,name:'akash'},{_id:3,rollno:3,name:'ajay'},{_id:4,rollno:4,name:'rahul'},{_id:5,rollno:5,name:'manoj'}])
+
+8.  find a specific data-->
+
+db.student.find({name:'Akash'})

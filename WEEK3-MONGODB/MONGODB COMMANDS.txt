@@ -250,6 +250,8 @@ db.student.find().skip(3) --> it skips first 3 records
 
 	$count: Returns a count of the number of documents at this stage of the aggregation pipeline.
 
+	
+
 
      db.student.aggregate([
 	{$match:{_id:2}},
@@ -267,7 +269,68 @@ db.student.find().skip(3) --> it skips first 3 records
 		{$set:{class:'Final Year'}},
 	])
 
+	db.student.aggregate([
+		{$unwind:'$subject'}
+	])
 
+	Normal embedded data model example -->
+	db.createCollection('teacher')
+	db.teacher.insertOne({_id:1,
+						name:'sahiram',	
+						address:{
+							street:101,
+							city:'narnaul',
+							state:'haryana'
+						}
+	})
+
+	Reference to a document-->
+	db.teacher.insertOne({_id:1,
+						name:'sarla',	
+						address:{
+							street:103,
+							city:'ateli',
+							state:'haryana'
+						},
+						ref_id:1
+
+	})
+20.	--> {ref_id} is a reference to that document. here we provide the{ _id } of the document which we want to provide as a reference to that document.Name can be anything but he value should be the unique id of other document which we want to reference here.-->
+
+		from: The collection to use for lookup in the same database
+		localField: The field in the primary collection that can be used as a unique identifier in the from collection.
+		foreignField: The field in the from collection that can be used as a unique identifier in the primary collection.
+		as: The name of the new field that will contain the matching documents from the from collection.
+
+	{
+    $lookup: {
+      from: "<name of the collection to join>",
+      localField: "key name by which we have saved the id of other document in our document.",
+      foreignField: "_id of the other document by which we want to reference",
+      as: "key name which we want to show for the referenced data.",
+    },
+  	},
+
+21.	$pow: show power of the value
+	$sqrt: square root 
+	$round: round the value
+	
+	db.student.aggregate([
+		{$project:{power:{$pow:['$degree',2]}}},
+		
+	])
+
+	db.student.aggregate([
+		{$project:{_id:0,name:1,root:{$sqrt:['$degree']}}},
+		
+	])
+
+	Multiple methods can be chained together--->
+
+	db.student.aggregate([
+		{$project:{_id:0,name:1,root:{$round:{$sqrt:['$degree']}}}},
+		
+	])
 
 
 

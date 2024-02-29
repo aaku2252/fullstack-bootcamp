@@ -34,7 +34,9 @@ phone:1234567892
 
 5. delete a single entry from collection -->
 
-db.collection('yourCollectionName').deleteOne({ /* Filter */ });
+db.collection('yourCollectionName').deleteOne({ /* Filter */ })
+
+db.student.update({*/ filter/*},{$unset:{*/  key name : ''/*}})
 
 
 6. show databases and collections -->
@@ -51,8 +53,8 @@ db.student.insertMany([{_id:2,rollno:2,name:'akash'},{_id:3,rollno:3,name:'ajay'
 db.student.find({name:'Akash'})
 
 
-9. update the exisiting data from collectionsfilter from first {} use set  in second {} and inside that gives value of set to the new value we want to give.
-It will add a new document (R) document if find condition does not matches .By default upsert is false we can set it to true if we want it. upsert is a optional data.-->
+9. update the exisiting data from collections, filter from first {}, use set  in second {} and inside that gives value of set the new value we want to give.
+It will add a new document (R) document if find condition does not matches and upsert is set to true .By default upsert is false we can set it to true if we want it. upsert is a optional data.-->
 
 db.student.updateOne({_id:2},{$set:{name:'Manjeet'}},{upsert:true})
 
@@ -97,6 +99,101 @@ db.student.find().limit(3) --> show only top 3 records
 
 db.student.find().skip(3) --> it skips first 3 records
 
+
+-MONGODB-DAY2--------------------------------------------------------------------------------------------------------------
+
+14. Query Operators  -->
+
+	Comparison
+
+	$eq: Values are equal
+	$ne: Values are not equal
+	$gt: Value is greater than another value
+	$gte: Value is greater than or equal to another value
+	$lt: Value is less than another value
+	$lte: Value is less than or equal to another value
+
+
+	db.items.find({price:{$eq:1000}})
+	db.items.find({productname:{$eq:'Pen'}})
+
+	db.items.find({price:{$gte:500}})
+	db.items.find({quantity:{$lte:20}})
+
+
+
+
+15. Logical   -->
+
+	$and: Returns documents where both queries match
+	$or: Returns documents where either query matches
+	$nor: Returns documents where both queries fail to match
+	$not: Returns documents where the query does not match
+
+
+	db.items.find({$and:
+		[
+		{price:{$gt:50}},
+		{price:{$lt:1500}}
+		]
+	})
+
+	db.items.find({$or:
+		[
+		{quantity:{$eq:10}},
+		{quantity:{$eq:50}}
+		]
+	})
+
+	db.items.find({$nor:
+		[
+		{quantity:{$lte:10}},
+		{quantity:{$gte:50}}
+		]
+	})
+
+	db.student.insertMany([
+
+	{_id:1,name:'suman',subject:['Math','Chemistry','Physics']},
+	{_id:2,name:'aman',subject:['Biology','Chemistry','Physics']},
+	{_id:3,name:'raman',subject:['History','Political','Civil']},
+	{_id:4,name:'chetan',subject:['Accounts','Economics']},
+	{_id:5,name:'puran',subject:['Zoology','Botany','English']},
+	{_id:6,name:'ravina',subject:['Zoology','Chemistry','Botany']},
+
+	])
+
+16. Array operators  Works only for arrays--->
+
+	$in: Value is matched within an array
+	$nin: Value is not matched within an array
+	$size: Checks the size of the item
+	$all: Checks if the array contains all value
+	$elemMatch: Checks if the array contains that item. It takes an conditional operator
+
+	db.student.find({subject:{$in:['Zoology']}})
+	db.student.find({subject:{$nin:['History','Math']}})
+	db.student.find({subject:{$size:2}})
+	db.student.find({subject:{$all:['Math']}})
+	db.student.find({subject:{$elemMatch:{$eq:'Accounts'}}})
+
+17. Elements Operators
+
+	$exists:  used to check whether a field exists or not in a document. 
+	$type: used to check the data type of a field string/number etc
+
+	db.student.find({name:{$exists:true}})
+	db.student.find({name:{$type:'string'}}) // only return only those if the name is in string data types
+
+
+
+
+
+18.Evaluation   -->
+
+$regex: Allows the use of regular expressions when evaluating field values
+$text: Performs a text search
+$where: Uses a JavaScript expression to match documents
 
 
 

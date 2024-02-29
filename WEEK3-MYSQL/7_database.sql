@@ -11,3 +11,7 @@ grant all privileges on *.* to 'akash'@'localhost';
 
 -- revoke create and update permissions from the user
 revoke Create,update on *.* from 'akash'@'localhost';
+use class;
+show tables;
+select * from employee order by phone desc;
+show processlist;

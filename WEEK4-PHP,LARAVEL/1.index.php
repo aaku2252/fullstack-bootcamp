@@ -48,26 +48,7 @@
 // xor - when both conditions are true then it will return false.If any of the conditon is false then it will return true.
 
 
-//> Conditional operator 
-// if else statement
 
-// $total_bill = 500;
-// if($total_bill>=5000){
-//     $discount= $total_bill*10/100;
-//     $final_bill = $total_bill-$discount;
-//     echo 'Final Bill : '.$final_bill;
-// }else if($total_bill>1000){
-//     $discount= $total_bill*5/100;
-//     $final_bill = $total_bill-$discount;
-//     echo 'Final Bill : '.$final_bill;
-
-// }else{
-    
-//     echo 'Final Bill : '.$total_bill;
-// }
-
-
-//>switch case
 
 
 

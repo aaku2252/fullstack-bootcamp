@@ -301,7 +301,7 @@ db.student.find().skip(3) --> it skips first 3 records
 		localField: The field in the primary collection that can be used as a unique identifier in the from collection.
 		foreignField: The field in the from collection that can be used as a unique identifier in the primary collection.
 		as: The name of the new field that will contain the matching documents from the from collection.
-
+---->
 	{
     $lookup: {
       from: "<name of the collection to join>",

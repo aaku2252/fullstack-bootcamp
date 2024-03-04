@@ -29,48 +29,48 @@ echo $obj->a;
 
 
 //> form validation using class
-<html>
-<body>
-    <form action="" method="post">
-        Username: <input type="text" name="username"/><br/>
-        PASSWORD: <input type="text" name="password"/><br/>
-        <input type="submit" name="submit">
-    </form>
+// <html>
+// <body>
+//     <form action="" method="post">
+//         Username: <input type="text" name="username"/><br/>
+//         PASSWORD: <input type="text" name="password"/><br/>
+//         <input type="submit" name="submit">
+//     </form>
 
 
-    <?php 
-    class User{
+//     <?php 
+//     class User{
 
-        function login() {
-            if ($_SERVER['REQUEST_METHOD']=='POST'){
+//         function login() {
+//             if ($_SERVER['REQUEST_METHOD']=='POST'){
 
             
-            $name = $_POST['username'];
-            $password = $_POST['password'];
-            $uname = 'Akash';
-            $pwd = '123';
+//             $name = $_POST['username'];
+//             $password = $_POST['password'];
+//             $uname = 'Akash';
+//             $pwd = '123';
 
-            if ($name == $uname && $password == $pwd) {
-                echo 'Login successful.';
-            }else{
-                echo 'Login Unsuccessful.';
+//             if ($name == $uname && $password == $pwd) {
+//                 echo 'Login successful.';
+//             }else{
+//                 echo 'Login Unsuccessful.';
 
-            }
-        }
-        }
-    }
+//             }
+//         }
+//         }
+//     }
 
-$user1 = new User();
-
-
-$user1->login();
+// $user1 = new User();
 
 
+// $user1->login();
 
 
-    ?>
-</body>
-</html>
+
+
+//     ?>
+// </body>
+// </html>
 
 
 //> Inheritance in class

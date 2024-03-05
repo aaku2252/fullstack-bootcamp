@@ -1,6 +1,6 @@
 
-//! inlude this file in the phpbackend folder in htdoc folder in xampp folder in C drive.
-//! It is mandatory to include this file there because the root for mysql database is that folder.Then we will call 
+<!-- //! inlude this file in the phpbackend folder in htdoc folder in xampp folder in C drive.
+//! It is mandatory to include this file there because the root for mysql database is that folder.Then we will call  -->
 
 <html>
 <head>

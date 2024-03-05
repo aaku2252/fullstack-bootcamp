@@ -1,62 +1,71 @@
 <html>
 
 <head>
-    <title>DB Connection</title>
+    <title>Update Database</title>
     <style>
         body {
-            background-color: beige;
+            background-color: aquamarine;
+        }
+
+        form {
+            width: fit-content;
+            margin: auto;
+        }
+
+        input {
+            margin: 10px auto;
+        }
+
+        h1 {
+            width: fit-content;
+            margin: 10px auto;
         }
 
         table {
-            border: 1px solid;
-            margin: 20px auto;
-            background-color: aquamarine;
+            border: 2px solid;
             padding: 10px;
-            border-radius: 20px;
+            margin: auto;
+            border-collapse: collapse;
+
         }
 
         th,
         td {
             border: 1px solid;
-            padding: 5px;
-        }
-
-
-
-        input {
-            display: block;
-            margin: auto;
-            background-color: blue;
-            padding: 4px 8px;
-            text-decoration: none;
-        }
-
-        h1 {
-            width: fit-content;
-            margin: auto;
-            color: blueviolet;
+            padding: 8px;
         }
     </style>
 </head>
 
 <body>
     <form action="" method="post">
-        <input type="submit" name="submit" value="Show">
+        User Id:<input type="text" name="userid"><br />
+        Phone:<input type="text" name="phone"><br />
+        <input type="submit" value="update" name=" update">
     </form>
 
+</body>
 
-    <?php
+</html>
+<?php
 
-    include "connection.php";
+include "connection.php";
+if (isset($_POST['userid'])) {
+    $userid = $_POST['userid'];
+    $phone = $_POST['phone'];
+    $sql = "update userreg set phone = '$phone' where userid = '$userid'";
+    $res = $con->query($sql);
+    if ($res == 1) {
 
-    if (isset($_POST['submit'])) {
+
+
         $sel = "select * from userreg";
-        $res = $con->query($sel);
+        $resUpdate = $con->query($sel);
 
-        if ($res->num_rows > 0) {
+        if ($resUpdate->num_rows > 0) {
 
             // closing the php tag
-    
+
             ?>
             <h1>User Data</h1>
             <table>
@@ -76,7 +85,7 @@
 
 
 
-                while ($rows = $res->fetch_assoc()) {
+                while ($rows = $resUpdate->fetch_assoc()) {
 
                     echo "<tr>";
                     echo "<td>" . $rows['userid'] . "</td>";
@@ -88,14 +97,29 @@
 
                 }
                 ;
-                //closing the table tag here that was opened in html before starting of php code
                 echo "</table>";
-        } else {
-            echo 'No result fetched';
         }
-    }
-    $con->close();
-    ?>
-</body>
 
-</html>
+    } else {
+        echo "No record has been updated.";
+    }
+}
+
+//>
+
+
+
+
+
+
+
+
+
+//>
+
+
+
+$con->close();
+
+
+?>

@@ -1,6 +1,7 @@
 <html>
     <body>
-        <form action="" method="post">
+        <form action="{{url('register')}}" method="post">
+            @csrf
             Name:<input type="text" name="name"><br/>
             Phone:<input type = 'text' name ="phone"><br/>
             Password:<input type="text" name="password"><br/>

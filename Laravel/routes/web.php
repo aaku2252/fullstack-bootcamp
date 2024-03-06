@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\formController;
 use Illuminate\Support\Facades\Route;
+
+// use app\Http\Controller\formController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +19,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('first', function () {
-    return view('first');
-});
+// Route::get('first', function () {
+//     return view('first');
+// });
+
+Route::get('register', [formController::class, 'create']);
+Route::post('register', [formController::class, 'store']);

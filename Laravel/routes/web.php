@@ -25,3 +25,8 @@ Route::get('/', function () {
 
 Route::get('register', [formController::class, 'create']);
 Route::post('register', [formController::class, 'store']);
+Route::get('display', [formController::class, 'show']);
+
+
+Route::get('update', [formController::class, 'updateView']);
+Route::post('update', [formController::class, 'update']);
